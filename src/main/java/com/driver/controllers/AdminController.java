@@ -1,5 +1,6 @@
 package com.driver.controllers;
 
+import com.driver.model.Admin;
 import com.driver.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
+	@Autowired
+     AdminServiceImpl AdminService;
 
 	@PostMapping("/register")
 	public ResponseEntity<Void> registerAdmin(@RequestBody Admin admin){
